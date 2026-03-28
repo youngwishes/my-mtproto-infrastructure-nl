@@ -1,0 +1,21 @@
+services:
+  haproxy:
+    image: haproxy:lts-alpine
+    container_name: haproxy-nl
+    restart: unless-stopped
+    ports:
+      - "0.0.0.0:443:443"
+      - "0.0.0.0:8404:8404"
+    volumes:
+      - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    networks:
+      - backend
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  backend:
+    driver: bridge
