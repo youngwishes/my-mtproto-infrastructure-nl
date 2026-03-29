@@ -5,8 +5,7 @@ services:
     restart: unless-stopped
     ports:
       - "0.0.0.0:443:443"
-    expose:
-      - "8404"
+      - "0.0.0.0:8404:8404"
     volumes:
       - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     networks:
