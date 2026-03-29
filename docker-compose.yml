@@ -1,7 +1,7 @@
 services:
   haproxy:
     image: haproxy:lts-alpine
-    container_name: haproxy-nl
+    container_name: haproxy
     restart: unless-stopped
     ports:
       - "0.0.0.0:443:443"

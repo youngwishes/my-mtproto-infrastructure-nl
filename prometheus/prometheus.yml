@@ -33,7 +33,6 @@ scrape_configs:
     metrics_path: /metrics
     scrape_interval: 30s
     scrape_timeout: 10s
-    # Опционально: добавляем метки
     metric_relabel_configs:
       - source_labels: [ __name__ ]
         regex: 'haproxy_.*'
