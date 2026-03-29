@@ -6,7 +6,7 @@ services:
     ports:
       - "0.0.0.0:443:443"
     expose:
-      - "8443"
+      - "8404"
     volumes:
       - ./haproxy/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
     networks:
